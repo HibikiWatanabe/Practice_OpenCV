@@ -7,12 +7,9 @@ import tkinter.filedialog
 root = tkinter.Tk()
 root.withdraw()
 
-def f_select():
+def f_select(path):
     #jpgファイルのみ表示
     typ = [("jpgファイル","*.jpg"), ("pngファイル","*.png"), ("gifファイル","*.gif")] 
-
-    #とりあえずこのファイルと同じディレクトリをiDirに格納
-    dir = os.path.abspath(os.path.dirname('..//'+__file__)) 
 
     #ファイル選択を促すメッセージ
     tkinter.messagebox.showinfo('mosaic_app','処理ファイルを選択してください') 
