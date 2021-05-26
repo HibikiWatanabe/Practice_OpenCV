@@ -2,12 +2,14 @@ import os
 import tkinter
 import tkinter.messagebox
 import tkinter.filedialog
-from my_module import file_select, file_display
+from my_module import file_mng
 
 #とりあえずこのファイルと同じディレクトリをiDirに格納
 dir = os.path.abspath(os.path.dirname('..//'+__file__)) 
+#開くファイルパスをdirに格納
+file_name = file_mng.f_select(dir)
+#パス取得テスト用
+print("Selected File Name:" + file_name) 
 
-file_name = file_select.f_select(dir)
-print("Selected File Name:" + file_name) #パス取得テスト用
-
-file_display.f_open(file_name)
+#ファイルオープン
+file_mng.f_open(file_name)
