@@ -1,14 +1,19 @@
 import numpy as np
 import cv2
 import os
+import tkinter as tk
 import tkinter.messagebox
 import tkinter.filedialog
 
+#空ウィンドウ対策
+root = tk.Tk()
+root.withdraw()
 
 def f_open(file_name):
-    img = cv2.imread(file_name, 1) #画像読み込み
-    cv2.namedWindow('window',cv2.WINDOW_NORMAL)
+    img = cv2.imread(file_name) #画像読み込み
     cv2.imshow('window', img) #画像のウィンドウ表示
+    #ROI = cv2.selectROI('window', img, fromCenter=False, showCrosshair=False) ROI対応のウィンドウにしてくれるっぽい
+    print(ROI)
 
     while(1):
         key = cv2.waitKey(0) #キー入力待ち(この場合何かしらキーが入力されるまで無限に待つ)
